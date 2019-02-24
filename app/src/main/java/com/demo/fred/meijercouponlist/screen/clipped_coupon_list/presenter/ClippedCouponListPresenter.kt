@@ -4,6 +4,7 @@ import com.demo.fred.meijercouponlist.adapter.AvailableCouponAdapter
 import com.demo.fred.meijercouponlist.model.MeijerCoupon
 import com.demo.fred.meijercouponlist.screen.clipped_coupon_list.view.ClippedCouponListView
 import com.demo.fred.meijercouponlist.util.Page
+import org.jetbrains.annotations.TestOnly
 
 class ClippedCouponListPresenter{
 
@@ -28,6 +29,15 @@ class ClippedCouponListPresenter{
             mView?.setAdapter(couponAdapter)
             mView?.setTotal(couponAdapter.itemCount)
         }
+    }
+
+    @TestOnly
+    fun getView() : ClippedCouponListView?{
+        return mView
+    }
+
+    fun getAdapter() : AvailableCouponAdapter{
+        return couponAdapter
     }
 
 }

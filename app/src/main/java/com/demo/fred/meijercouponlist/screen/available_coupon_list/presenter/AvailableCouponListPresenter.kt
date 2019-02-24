@@ -9,6 +9,7 @@ import com.demo.fred.meijercouponlist.util.Page
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import org.jetbrains.annotations.TestOnly
 
 class AvailableCouponListPresenter {
     private val availableCouponListDataModel = AvailableCouponListDataModel()
@@ -56,6 +57,16 @@ class AvailableCouponListPresenter {
         couponAdapter.addItem(coupon)
         mView?.setAdapter(couponAdapter)
         mView?.setTotal((couponAdapter.itemCount).toString())
+    }
+
+    @TestOnly
+    fun getView(): AvailableCouponListView? {
+        return mView
+    }
+
+    @TestOnly
+    fun getAdapter(): AvailableCouponAdapter {
+        return couponAdapter
     }
 
     companion object {

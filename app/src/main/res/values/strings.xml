@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MeijerCouponList</string>
+    <string name="coupon_image">coupon image</string>
+    <string name="coupon_clip_button">
+        <u><b>Clip</b></u>
+    </string>
+    <string name="coupon_total">Total: </string>
+    <string name="pager_title_available">Available</string>
+    <string name="pager_title_clip">Clipped</string>
+    <string name="pager_title">Title</string>
+</resources>

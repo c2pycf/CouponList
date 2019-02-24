@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="coupon_width">100dp</dimen>
+    <dimen name="coupon_margin">10dp</dimen>
+    <dimen name="vertical_margin">10dp</dimen>
+    <dimen name="horizontal_margin">10dp</dimen>
+    <dimen name="text_padding">6sp</dimen>
+</resources>

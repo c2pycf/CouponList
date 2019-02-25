@@ -4,6 +4,14 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
+/**
+ * Class: PageAdapter
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description: Set up the pager adapter for coupon activity to bind selected fragment to the pager
+ *
+ */
 class PageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     private val tabNames: ArrayList<String> = ArrayList()

@@ -15,7 +15,17 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mockito.mock
 import org.mockito.MockitoAnnotations
-
+/**
+ * Class: AvailableCouponTest
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ * Runner: Junit4
+ * Test: AvailableCouponFragment/Presenter/Model
+ *
+ * Description:
+ * Setup and perform unit test for mainly presenter and model of AvailableCouponFragment
+ *
+ */
 
 @RunWith(JUnit4::class)
 class AvailableCouponTest {
@@ -41,6 +51,9 @@ class AvailableCouponTest {
         coupons.add(MeijerCoupon("Test4", "TestDecs4", "TestUrl4", "date4", false))
     }
 
+    /**
+     * Test model to fetch data from server and verify the total amount
+     */
     @Test
     fun testService() {
         model.getCoupons()
@@ -51,11 +64,17 @@ class AvailableCouponTest {
             }
     }
 
+    /**
+     * Test presenter attachView method if no errors pass
+     */
     @Test
     fun testAttach(){
         presenter.attachView(fragment)
     }
 
+    /**
+     * Test presenter addCoupon verify if adapter is set
+     */
     @Test
     fun testAddCoupon(){
         presenter.addCoupon(mock(MeijerCoupon::class.java))

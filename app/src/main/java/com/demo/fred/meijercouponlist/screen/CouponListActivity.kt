@@ -11,6 +11,15 @@ import com.demo.fred.meijercouponlist.util.AddClipCoupon
 import com.demo.fred.meijercouponlist.util.ClipCoupon
 import kotlinx.android.synthetic.main.activity_coupon_list.*
 
+/**
+ * Class: CouponListActivity
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description:
+ * Desc: Display Tabs and fragment within the container. Able to swap between fragments
+ *
+ */
 class CouponListActivity : AppCompatActivity(), ClipCoupon {
 
     private val clippedCouponList = ArrayList<MeijerCoupon>()

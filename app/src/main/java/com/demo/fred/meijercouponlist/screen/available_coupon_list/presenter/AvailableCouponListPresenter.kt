@@ -11,6 +11,16 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.annotations.TestOnly
 
+/**
+ * Class: AvailableCouponListPresenter
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description:
+ * Desc: Presenter for AvailableCouponList to handle data request and update UI via view contract
+ *
+ */
+
 class AvailableCouponListPresenter {
     private val availableCouponListDataModel = AvailableCouponListDataModel()
     private var mView: AvailableCouponListView? = null

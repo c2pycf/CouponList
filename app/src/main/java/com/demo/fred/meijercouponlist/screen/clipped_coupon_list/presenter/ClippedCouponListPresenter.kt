@@ -6,6 +6,16 @@ import com.demo.fred.meijercouponlist.screen.clipped_coupon_list.view.ClippedCou
 import com.demo.fred.meijercouponlist.util.Page
 import org.jetbrains.annotations.TestOnly
 
+/**
+ * Class: ClippedCouponListPresenter
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description:
+ * Desc: Presenter for ClippedCouponList to handle data passing from available fragment and update UI via view contract
+ *
+ */
+
 class ClippedCouponListPresenter{
 
     private var mView: ClippedCouponListView? = null

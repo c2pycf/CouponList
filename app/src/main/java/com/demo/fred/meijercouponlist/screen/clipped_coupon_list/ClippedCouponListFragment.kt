@@ -17,6 +17,12 @@ import com.demo.fred.meijercouponlist.util.AddClipCoupon
 import com.demo.fred.meijercouponlist.util.ClipCoupon
 
 /**
+ * Class: ClippedCouponListFragment
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description:
+ * Desc: Fragment shows list of the Clipped coupon from user and able to be clicked for Unclip
  *
  */
 class ClippedCouponListFragment : Fragment(), ClippedCouponListView, AddClipCoupon {

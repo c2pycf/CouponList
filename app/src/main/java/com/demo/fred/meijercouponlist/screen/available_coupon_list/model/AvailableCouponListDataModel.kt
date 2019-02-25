@@ -6,6 +6,8 @@ import io.reactivex.Observable
 
 /**
  * Class: AvailableCouponListDataModel
+ * Author: Fred Chen
+ * Time: 22/02/2019
  *
  * Model to Fetch date from service and pass to presenter
  */

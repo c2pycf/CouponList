@@ -12,6 +12,15 @@ import com.demo.fred.meijercouponlist.R
 import com.demo.fred.meijercouponlist.model.MeijerCoupon
 import com.demo.fred.meijercouponlist.util.Page
 
+/**
+ * Class: AvailableCouponAdapter
+ * Author: Fred Chen
+ * Time: 22/02/2019
+ *
+ * Description: Recycler view adapter for available coupon fragment. Binding the view holder with views.
+ * Setup clip/unclip Listener
+ *
+ */
 class AvailableCouponAdapter(page: Page) : RecyclerView.Adapter<AvailableCouponAdapter.ViewHolder>() {
 
     private var pageType: Page = page

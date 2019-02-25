@@ -30,8 +30,10 @@
                 app:layout_constraintTop_toTopOf="@id/coupon_item"
                 app:layout_constraintStart_toEndOf="@id/coupon_available_image"
                 app:layout_constraintEnd_toStartOf="@id/tv_coupon_clip"
-                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="@dimen/horizontal_margin"
+                android:textColor="@color/colorCouponTitle"
+
         />
 
         <TextView
@@ -54,6 +56,7 @@
                 app:layout_constraintEnd_toStartOf="@id/tv_coupon_clip"
                 android:layout_marginStart="@dimen/vertical_margin"
                 android:layout_marginTop="@dimen/horizontal_margin"
+                android:textSize="@dimen/valid_date_text_size"
         />
 
         <TextView

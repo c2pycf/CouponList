@@ -4,8 +4,6 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.os.AsyncTask
 import android.util.Log
 import com.demo.fred.meijercouponlist.model.CouponsList
 import com.demo.fred.meijercouponlist.model.MeijerCoupon
@@ -41,14 +39,13 @@ class CouponViewModel(application: Application) : AndroidViewModel(application) 
             .subscribe({
                 mutableCouponList.value = it
                 //clippedCoupon = it.listOfCoupons
-                Log.d(TAG,clippedCoupon[0].title)
+                Log.d(TAG, clippedCoupon[0].title)
             }, { error ->
                 Log.e(TAG, "Error: " + error.message)
             })
 
         return mutableCouponList
     }
-
 
 
     companion object {

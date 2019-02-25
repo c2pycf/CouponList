@@ -23,7 +23,7 @@ import com.demo.fred.meijercouponlist.util.ClipCoupon
 class ClippedCouponListFragment : Fragment(), ClippedCouponListView, AddClipCoupon {
 
     private lateinit var clipCouponRecyclerView: RecyclerView
-    private lateinit var presenter: ClippedCouponListPresenter
+    private val presenter = ClippedCouponListPresenter()
     private lateinit var clipCouponEvent: ClipCoupon
     private lateinit var tvTotal: TextView
 
@@ -37,7 +37,6 @@ class ClippedCouponListFragment : Fragment(), ClippedCouponListView, AddClipCoup
         clipCouponRecyclerView = view.findViewById(R.id.clipped_coupon_recycler_view)
         tvTotal = view.findViewById(R.id.tv_coupon_total_clip)
         clipCouponRecyclerView.itemAnimator = DefaultItemAnimator()
-        presenter = ClippedCouponListPresenter()
         presenter.attach(this)
         return view
     }

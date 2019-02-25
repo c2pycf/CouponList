@@ -1,5 +1,6 @@
 package com.demo.fred.meijercouponlist.adapter
 
+import android.graphics.Paint
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -44,14 +45,16 @@ class AvailableCouponAdapter(page: Page) : RecyclerView.Adapter<AvailableCouponA
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         p0.title.text = myList?.get(p1)?.title
+        p0.title.paintFlags = Paint.FAKE_BOLD_TEXT_FLAG
         p0.description.text = myList?.get(p1)?.description
         val dates = myList?.get(p1)?.date?.split("T")
         val valid = "Valid through ".plus(dates?.get(0).orEmpty())
         p0.date.text = valid
         when (pageType) {
-            Page.AVAILABLE -> p0.clip.text = "Clip"
-            Page.CLIPPED -> p0.clip.text = "Unclip"
+            Page.AVAILABLE -> p0.clip.text = p0.getClipString()
+            Page.CLIPPED -> p0.clip.text = p0.getUnclipString()
         }
+        p0.clip.paintFlags = Paint.UNDERLINE_TEXT_FLAG
         Glide.with(p0.itemView.context)
             .load(myList?.getOrNull(p1)?.imageUrl)
             .into(p0.img)
@@ -71,6 +74,14 @@ class AvailableCouponAdapter(page: Page) : RecyclerView.Adapter<AvailableCouponA
                 }
             }
         }
+
+        fun getClipString(): String {
+            return itemView.resources.getString(R.string.coupon_clip_button)
+        }
+
+        fun getUnclipString(): String {
+            return itemView.resources.getString(R.string.coupon_clip_button_unclip)
+        }
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -82,5 +93,6 @@ class AvailableCouponAdapter(page: Page) : RecyclerView.Adapter<AvailableCouponA
         super.onDetachedFromRecyclerView(recyclerView)
         this.recyclerView = null
     }
+
 
 }

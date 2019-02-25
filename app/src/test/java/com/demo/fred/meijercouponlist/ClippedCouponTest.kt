@@ -14,7 +14,6 @@ import org.mockito.MockitoAnnotations
 
 @RunWith(JUnit4::class)
 class ClippedCouponTest {
-    private lateinit var activity: Activity
     private lateinit var fragment: ClippedCouponListFragment
     private lateinit var presenter: ClippedCouponListPresenter
     private val coupons = ArrayList<MeijerCoupon>()

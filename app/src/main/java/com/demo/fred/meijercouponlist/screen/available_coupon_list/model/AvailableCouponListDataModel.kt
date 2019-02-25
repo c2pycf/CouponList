@@ -7,17 +7,12 @@ import io.reactivex.Observable
 /**
  * Class: AvailableCouponListDataModel
  *
- * Model to Fetch date from service and pass to viewmodel
+ * Model to Fetch date from service and pass to presenter
  */
 class AvailableCouponListDataModel {
     private val retrofit: MeijerService.Creator = MeijerService
     private val maijerAPI = retrofit.create()
 
-
     fun getCoupons(): Observable<CouponsList> =
         maijerAPI.getCoupon("34lgBae%2FxIEnqksQpkn3w9F0JTKCafuiCr0ejLNLvBzlOlOZBa1CMA%3D%3D")
-
-    companion object {
-        private val TAG = this::class.java.simpleName
-    }
 }

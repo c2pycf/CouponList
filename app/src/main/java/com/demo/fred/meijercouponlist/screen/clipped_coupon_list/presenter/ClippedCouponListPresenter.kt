@@ -18,7 +18,7 @@ class ClippedCouponListPresenter{
 
     fun loadList(coupons: List<MeijerCoupon>) {
         couponAdapter.loadItem(coupons)
-        mView?.setTotal(coupons.size)
+        mView?.setText(coupons.size)
     }
 
     fun create(){
@@ -27,7 +27,7 @@ class ClippedCouponListPresenter{
             mView?.clipped(it)
             couponAdapter.remove(it)
             mView?.setAdapter(couponAdapter)
-            mView?.setTotal(couponAdapter.itemCount)
+            mView?.setText(couponAdapter.itemCount)
         }
     }
 
@@ -36,6 +36,7 @@ class ClippedCouponListPresenter{
         return mView
     }
 
+    @TestOnly
     fun getAdapter() : AvailableCouponAdapter{
         return couponAdapter
     }

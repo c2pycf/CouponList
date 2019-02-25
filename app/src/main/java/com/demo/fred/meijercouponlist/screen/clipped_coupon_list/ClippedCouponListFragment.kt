@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.demo.fred.meijercouponlist.R
-import com.demo.fred.meijercouponlist.adapter.AvailableCouponAdapter
 import com.demo.fred.meijercouponlist.model.MeijerCoupon
 import com.demo.fred.meijercouponlist.screen.clipped_coupon_list.presenter.ClippedCouponListPresenter
 import com.demo.fred.meijercouponlist.screen.clipped_coupon_list.view.ClippedCouponListView
@@ -51,8 +50,8 @@ class ClippedCouponListFragment : Fragment(), ClippedCouponListView, AddClipCoup
         presenter.loadList(coupons)
     }
 
-    override fun setAdapter(couponAdapter: AvailableCouponAdapter) {
-        clipCouponRecyclerView.adapter = couponAdapter
+    override fun setAdapter(adapter: RecyclerView.Adapter<*>) {
+        clipCouponRecyclerView.adapter = adapter
     }
 
     override fun clipped(coupon: MeijerCoupon) {
@@ -63,7 +62,7 @@ class ClippedCouponListFragment : Fragment(), ClippedCouponListView, AddClipCoup
 
     }
 
-    override fun setTotal(size: Int) {
+    override fun setText(size: Int) {
         val total = resources.getString(R.string.coupon_total).plus(size.toString())
         tvTotal.text = total
     }

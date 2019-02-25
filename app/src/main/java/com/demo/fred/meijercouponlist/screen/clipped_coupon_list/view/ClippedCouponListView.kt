@@ -1,11 +1,10 @@
 package com.demo.fred.meijercouponlist.screen.clipped_coupon_list.view
 
-import com.demo.fred.meijercouponlist.adapter.AvailableCouponAdapter
+import android.support.v7.widget.RecyclerView
 import com.demo.fred.meijercouponlist.model.MeijerCoupon
 
-interface ClippedCouponListView{
-    fun setAdapter(couponAdapter: AvailableCouponAdapter)
+interface ClippedCouponListView {
+    fun setAdapter(adapter: RecyclerView.Adapter<*>)
     fun clipped(coupon: MeijerCoupon)
-    fun setTotal(size: Int)
-
+    fun setText(size: Int)
 }

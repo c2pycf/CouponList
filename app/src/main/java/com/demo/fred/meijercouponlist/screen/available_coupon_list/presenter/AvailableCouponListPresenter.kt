@@ -29,10 +29,10 @@ class AvailableCouponListPresenter {
     }
 
     private fun onClipClicked() {
-        couponAdapter.onItemClick = {
-            mView?.showMessage(it.title)
-            mView?.clipped(it)
-            couponAdapter.remove(it)
+        couponAdapter.onItemClick = { coupon ->
+            mView?.showMessage(coupon.title)
+            mView?.clipped(coupon)
+            couponAdapter.remove(coupon)
             mView?.setAdapter(couponAdapter)
             mView?.setTotal((couponAdapter.itemCount).toString())
         }
@@ -43,10 +43,15 @@ class AvailableCouponListPresenter {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ couponList ->
-                Log.d(TAG, couponList.listOfCoupons[0].title)
-                mView?.stopLoading()
-                couponAdapter.loadItem(couponList.listOfCoupons)
-                mView?.setTotal(couponList.couponCount)
+                if (couponList != null) {
+                    Log.d(TAG, couponList.listOfCoupons[0].title)
+                    mView?.stopLoading()
+                    couponAdapter.loadItem(couponList.listOfCoupons)
+                    mView?.setTotal(couponList.couponCount)
+                } else {
+                    mView?.stopLoading()
+                    mView?.showMessage(EMPTY_LIST)
+                }
             }, { error ->
                 Log.e(TAG, error.message)
                 mView?.showMessage(error.message.toString())
@@ -60,17 +65,13 @@ class AvailableCouponListPresenter {
     }
 
     @TestOnly
-    fun getView(): AvailableCouponListView? {
-        return mView
-    }
-
-    @TestOnly
     fun getAdapter(): AvailableCouponAdapter {
         return couponAdapter
     }
 
     companion object {
         private val TAG = this::class.java.simpleName
+        private const val EMPTY_LIST = "There is no coupon available right now!"
     }
 
 }
